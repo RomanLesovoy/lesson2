@@ -1,23 +1,19 @@
-import logo from './logo.svg';
+import { useState } from 'react'
+import Form from './components/Form'
+import List from './components/List'
+import Message from './components/Message'
+import Header from './components/Header'
+import RefExample from './components/RefExample';
 import './App.css';
 
 function App() {
+  const [message, setMessage] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header text={message} />
+      <Message message={message} setMessage={setMessage} />
+      <RefExample />
     </div>
   );
 }
